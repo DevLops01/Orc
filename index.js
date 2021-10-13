@@ -1,12 +1,12 @@
 const axios = require("axios");
+const { abi } = require("./abi");
+const abiDecoder = require("abi-decoder");
+const address = "0x7d9d3659dcfbea08a87777c52020BC672deece13";
+
 const Web3 = require("web3");
 const web3 = new Web3(
   "https://mainnet.infura.io/v3/1d62c2d15fee4c2e93097c1c4a09b25c"
 );
-const { abi } = require("./abi");
-const abiDecoder = require("abi-decoder");
-
-const address = "0x7d9d3659dcfbea08a87777c52020BC672deece13";
 const contract = new web3.eth.Contract(abi, address);
 
 const getStakeType = async () => {
